@@ -50,6 +50,7 @@ td:hover{
     margin:0px;
     text-align: center;
     z-index: 7;
+    display: none;
     
 }
 .winModal{
@@ -175,6 +176,7 @@ td:hover{
     margin-right: 5px;
     margin-bottom: 15px;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 #hint1:hover{
     background-color: rgb(224, 118, 118);
@@ -191,6 +193,7 @@ td:hover{
     margin-right: 5px;
     margin-bottom: 15px;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 #hint2:hover{
     background-color: rgb(223, 100, 120);
@@ -207,6 +210,7 @@ td:hover{
     margin-right: 5px;
     margin-bottom: 15px;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 #hint3:hover{
     background-color: rgb(226, 109, 119);
@@ -224,6 +228,7 @@ td:hover{
     margin-bottom: 15px;
     transition: 0.3s ease;
     outline: none;
+    cursor: pointer;
 }
 #easy:hover{
     background-color: rgb(224, 118, 118);
@@ -241,6 +246,7 @@ td:hover{
     margin-bottom: 15px;
     transition: 0.3s ease;
     outline: none;
+    cursor: pointer;
 }
 #medium:hover{
     background-color: rgb(223, 100, 120);
@@ -258,6 +264,7 @@ td:hover{
     margin-bottom: 15px;
     transition: 0.3s ease;
     outline: none;
+    cursor: pointer;
 }
 #hard:hover{
     background-color: rgb(226, 109, 119);
@@ -275,6 +282,7 @@ td:hover{
     margin-bottom: 15px;
     transition: 0.3s ease;
     outline: none;
+    cursor: pointer;
 }
 #smiley:hover{
     background-color: rgb(226, 109, 119);
@@ -292,6 +300,7 @@ td:hover{
     margin-bottom: 15px;
     transition: 0.3s ease;
     outline: none;
+    cursor: pointer;
 }
 #safe:hover{
     background-color: rgb(226, 109, 119);
@@ -309,6 +318,7 @@ td:hover{
     margin-bottom: 15px;
     transition: 0.3s ease;
     outline: none;
+    cursor: pointer;
 }
 #manuall:hover{
     background-color: rgb(226, 109, 119);

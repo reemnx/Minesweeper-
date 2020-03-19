@@ -173,7 +173,9 @@ function mouseEvent(elBtn, event, i, j) {
         gCellClicksCnt++;
         var currI = parseInt(i);
         var currJ = parseInt(j);
-        if (gBoard[currI][currJ].minesAroundCount === 0) {
+        //=================================
+     
+        if (gBoard[currI][currJ].minesAroundCount === 0 ) {
             expandShown(currI, currJ);
         }
         if (gBoard[currI][currJ].isMarked) return;
@@ -289,13 +291,17 @@ function expandShown(currI, currJ) {
         if (i < 0 || i >= gLevel.SIZE) continue;
         for (var j = currJ - 1; j <= currJ + 1; j++) {
             if (j < 0 || j >= gLevel.SIZE) continue;
-            if (gBoard[i][j].isShown) continue;
             gBoard[i][j].isShown = true;
+            // if(gBoard[i][j].minesAroundCount && !gBoard[i][j].isShown){
+            //     gBoard[i][j].isShown = true;
+            // }
+            // if(gBoard[i][j].minesAroundCount == 0 && !gBoard[i][j].isShown){
+            //     gBoard[i][j].isShown = true ;
+            //     expandShown(i,j);
+            }
         }
+        renderBoard();
     }
-    renderBoard();
-    return;
-}
 function hintActive(btn) {
     isHint = true;
     var tdsHolder = document.querySelectorAll('td');
