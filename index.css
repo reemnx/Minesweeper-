@@ -1,0 +1,316 @@
+.gameContainer{
+    background-image: url(photo-of-brown-house-near-mountain-1424246.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom:  5px solid black;
+}
+body{
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    height: 98vh;
+    overflow: hidden;
+    overflow: hidden;
+}
+td {
+    background-color: #161616;
+    border: 1.5px solid #ffffff;
+    color: rgb(76, 198, 214);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px ;
+    margin: 0px;
+    display: table-cell;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px;
+}
+table{
+    display: table;
+    border-collapse: separate;
+}
+td:hover{
+    background-color: rgba(0, 230, 238, 0.253);
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+.tablewraper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin:0px;
+}
+.winModalWraper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin:0px;
+    text-align: center;
+    z-index: 7;
+    
+}
+.winModal{
+    position: absolute;
+    top:150px;
+    width: 300px;
+    height: 300px;
+    left: 470px;
+    background-color: rgba(80, 255, 232, 0.747);
+    border: 4px solid black;
+    z-index: 5;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.modalImg{
+    position: absolute;
+    top:230px;
+    left: 495px;
+    z-index: 6;
+    justify-content: center;
+    display: flex;
+    border: 3px white solid;
+    border-radius: 10px;
+}
+.lifes{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: whitesmoke;
+}
+.timerwraper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    flex-direction: column;
+}
+.bestShow{
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.473);
+    font-size: 20px;
+    font-weight: bold;
+    border:1.5px solid coral;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.3s ease;
+}
+.bestShow:hover{
+    letter-spacing: 3px;
+}
+.safeClicks{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin:0px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: rgb(180, 255, 251);
+    margin:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s ease;
+}
+.header:hover{
+   color: rgb(214, 229, 255);
+}
+.hintBtns{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.smile{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.diff{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.opentd{
+    background-color: rgba(202, 202, 202, 0.808);
+    border: 1.5px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+.bomb{
+    background-color: rgb(255, 0, 0);
+    border: 1.5px solid black;
+}
+
+.smiley{
+    width: 50px;
+    height: 30px;
+}
+.hintOn{
+    border: 2px solid red ;
+}
+#hint1{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+#hint1:hover{
+    background-color: rgb(224, 118, 118);
+    width: 90px;
+}
+#hint2{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+#hint2:hover{
+    background-color: rgb(223, 100, 120);
+    width: 90px;
+}
+#hint3{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+#hint3:hover{
+    background-color: rgb(226, 109, 119);
+    width: 90px;
+}
+#easy{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    outline: none;
+}
+#easy:hover{
+    background-color: rgb(224, 118, 118);
+    width: 90px;
+}
+#medium{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    outline: none;
+}
+#medium:hover{
+    background-color: rgb(223, 100, 120);
+    width: 90px;
+}
+#hard{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    outline: none;
+}
+#hard:hover{
+    background-color: rgb(226, 109, 119);
+    width: 90px;
+}
+#smiley{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    outline: none;
+}
+#smiley:hover{
+    background-color: rgb(226, 109, 119);
+    width: 90px;
+}
+#safe{
+    text-align: center;
+    background-color: lightblue;
+    width: 90px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    outline: none;
+}
+#safe:hover{
+    background-color: rgb(226, 109, 119);
+    width: 150px;
+}
+#manuall{
+    text-align: center;
+    background-color: lightblue;
+    width: 90px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    outline: none;
+}
+#manuall:hover{
+    background-color: rgb(226, 109, 119);
+    width: 150px;
+}

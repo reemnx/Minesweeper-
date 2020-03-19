@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reem Alon | Minesweepwer</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="https://img.favpng.com/23/8/16/microsoft-minesweeper-minesweeper-classic-the-minesweeper-naval-mine-png-favpng-dAFmtL7MzhhYNRnGSVJQz1K3m.jpg" />
+</head>
+
+<body onload="initGame()" oncontextmenu="return false;">
+    <div class="gameContainer">
+        <div class="header">
+            <h2>Minesweepwer | Winter</h2>
+        </div>
+        <div class="winModalWraper">
+            <div class="winModal">
+                <h2>Congratz! Victory.</h2>
+            </div>
+            <img class="modalImg" src="giphy.gif" width="250px" height="200px">
+        </div>
+        <div class="smile">
+            <button onclick="initGame()" class="smiley" id="smiley">Im Smiley</button>
+        </div>
+        <div class="diff">
+            <button onclick="boardSizeChange(this)" id="easy">Easy</button>
+            <button onclick="boardSizeChange(this)" id="medium">Medium</button>
+            <button onclick="boardSizeChange(this)" id="hard">Hard</button>
+        </div>
+
+        <div class="hintBtns">
+            <button onclick="hintActive(this)" class="hintBtn1" id="hint1">🦸</button>
+            <button onclick="hintActive(this)" class="hintBtn2" id="hint2">🦸</button>
+            <button onclick="hintActive(this)" class="hintBtn3" id="hint3">🦸</button>
+        </div>
+        <div class="lifes"></div>
+
+        <div class="tablewraper">
+            <table>
+                <tbody class="board">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="timerwraper">
+            <h3 class="timer">Timer</h3>
+            <h3 class="besttime">Your best score is: <span class="bestShow"></span></h3>
+        </div>
+        <div class="safeClicks">
+            <button class="safeClick" id="safe" onclick="safeClick(this)">Safe Click</button>
+            <button class="manuall" id="manuall" onclick="manuallBombs(this)">Set bomb Manually</button>
+            <!-- <h4>Hi</h4> -->
+        </div>
+    </div>
+
+    <script src="index1.js"></script>
+</body>
+
+</html>
