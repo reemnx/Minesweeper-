@@ -115,21 +115,21 @@ function boardSizeChange(elBtn) {
         gLevel.SIZE = 4;
         gLevel.MINES = 2;
         gLifeCnt = 2;
-        gBoard.splice(0,gLevel.SIZE);
+        gBoard = [] ;
         initGame();
     }
     else if (elBtn.innerHTML == 'Medium') {
         gLevel.SIZE = 8;
         gLevel.MINES = 12;
         gLifeCnt = 3;
-        gBoard.splice(0,gLevel.SIZE);
+        gBoard = [] ;
         initGame();
     }
     else if (elBtn.innerHTML == 'Hard') {
         gLevel.SIZE = 12;
         gLevel.MINES = 30;
         gLifeCnt = 3;
-        gBoard.splice(0,gLevel.SIZE);
+        gBoard = [] ;
         initGame();
     }
 }
@@ -294,17 +294,18 @@ function expandShown(currI, currJ) {
         if (i < 0 || i >= gLevel.SIZE) continue;
         for (var j = currJ - 1; j <= currJ + 1; j++) {
             if (j < 0 || j >= gLevel.SIZE) continue;
-            gBoard[i][j].isShown = true;
-            // if(gBoard[i][j].minesAroundCount && !gBoard[i][j].isShown){
-            //     gBoard[i][j].isShown = true;
-            // }
-            // if(gBoard[i][j].minesAroundCount == 0 && !gBoard[i][j].isShown){
-            //     gBoard[i][j].isShown = true ;
-            //     expandShown(i,j);
-            }
+           gBoard[i][j].isShown = true ;
+        //     if(gBoard[i][j].minesAroundCount && !gBoard[i][j].isShown){
+        //         gBoard[i][j].isShown = true;
+        //     }
+        //     if(gBoard[i][j].minesAroundCount == 0 && !gBoard[i][j].isShown){
+        //         gBoard[i][j].isShown = true ;
+        //         expandShown(i,j);
+        //     }
         }
         renderBoard();
     }
+}
 function hintActive(btn) {
     isHint = true;
     var tdsHolder = document.querySelectorAll('td');
