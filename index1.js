@@ -115,18 +115,21 @@ function boardSizeChange(elBtn) {
         gLevel.SIZE = 4;
         gLevel.MINES = 2;
         gLifeCnt = 2;
+        gBoard.splice(0,gLevel.SIZE);
         initGame();
     }
     else if (elBtn.innerHTML == 'Medium') {
         gLevel.SIZE = 8;
         gLevel.MINES = 12;
         gLifeCnt = 3;
+        gBoard.splice(0,gLevel.SIZE);
         initGame();
     }
     else if (elBtn.innerHTML == 'Hard') {
         gLevel.SIZE = 12;
         gLevel.MINES = 30;
         gLifeCnt = 3;
+        gBoard.splice(0,gLevel.SIZE);
         initGame();
     }
 }
