@@ -133,6 +133,9 @@ function boardSizeChange(elBtn) {
     }
 }
 function manuallBombs(elBtn) {
+    if(gCellClicksCnt){
+        return ;
+    }
     manualBombs = true;
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
