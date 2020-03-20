@@ -314,6 +314,7 @@ function hintActive(btn) {
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
         tdsHolder[i].style.borderColor = "yellow";
+        tdsHolder[i].style.cursor = 'pointer' ; 
         tdsHolder[i].innerHTML = '💡';
     }
     btn.style.display = 'none';
