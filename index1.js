@@ -137,6 +137,7 @@ function manuallBombs(elBtn) {
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
         tdsHolder[i].style.borderColor = "yellow";
+        tdsHolder[i].style.cursor = 'pointer' ; 
         tdsHolder[i].innerHTML = '💣';
     }
 }
@@ -156,6 +157,9 @@ function mouseEvent(elBtn, event, i, j) {
         bombPlaced = true;
         gBoard[i][j].isMine = true;
         renderBoard();
+        document.querySelector(`[data-i="${i}"][data-j="${j}"]`).innerHTML = '💣' ;
+        document.querySelector(`[data-i="${i}"][data-j="${j}"]`).style.borderColor = "red";
+        setTimeout(function(){ renderBoard(); }, 1000);
         manualBombs = false;
         return;
     }
