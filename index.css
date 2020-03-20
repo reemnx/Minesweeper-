@@ -1,9 +1,48 @@
+.howToPlay{
+    position: absolute;
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 550px;
+    border: 3px solid turquoise;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.527);
+    top: 25px;
+    left: 100px;
+}
+.howToPlay p{
+    color: rgb(219, 219, 219);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10px ;
+    padding-right: 10px ;
+    /* padding-top: 10px; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+.howtoheader{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(64, 224, 208, 0.514);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
 .gameContainer{
     background-image: url(photo-of-brown-house-near-mountain-1424246.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     border-bottom:  5px solid black;
+    height: 100vh;
 }
 body{
     align-items: center;
@@ -284,6 +323,24 @@ td:hover{
     outline: none;
     cursor: pointer;
 }
+.howtobuttons{
+    text-align: center;
+    background-color: lightblue;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 255, 213);
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-weight: bold;
+}
+
 #smiley:hover{
     background-color: rgb(226, 109, 119);
     width: 90px;

@@ -46,7 +46,6 @@ function varsReset() {
     document.querySelector('.smiley').innerHTML = '😀';
     document.querySelector('.winModalWraper').style.display = 'none';
     document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestScore');
-    localStorage.setItem('bestScore', score);
 }
 function initGame() {
     buildBoard();
