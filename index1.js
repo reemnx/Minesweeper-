@@ -14,6 +14,7 @@ var gFirstTime;
 var winCheckerInterval;
 var gBoard = [];
 var gCellClicksCnt = 0;
+var manualClick = 0;
 var isHint = false;
 var gLevel = {
     SIZE: 4,
@@ -155,10 +156,13 @@ function boardSizeChange(elBtn) {
     }
 }
 function manuallBombs(elBtn) {
+    manualClick++ ;
     if (gCellClicksCnt) {
         return;
     }
+    if(manualClick === 1){
     document.querySelector('.bombsModal').style.display = 'block';
+    }
     manualBombs = true;
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
