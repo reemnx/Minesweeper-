@@ -114,33 +114,33 @@ function boardSizeChange(elBtn) {
         gLevel.SIZE = 4;
         gLevel.MINES = 2;
         gLifeCnt = 2;
-        gBoard = [] ;
+        gBoard = [];
         initGame();
     }
     else if (elBtn.innerHTML == 'Medium') {
         gLevel.SIZE = 8;
         gLevel.MINES = 12;
         gLifeCnt = 3;
-        gBoard = [] ;
+        gBoard = [];
         initGame();
     }
     else if (elBtn.innerHTML == 'Hard') {
         gLevel.SIZE = 12;
         gLevel.MINES = 30;
         gLifeCnt = 3;
-        gBoard = [] ;
+        gBoard = [];
         initGame();
     }
 }
 function manuallBombs(elBtn) {
-    if(gCellClicksCnt){
-        return ;
+    if (gCellClicksCnt) {
+        return;
     }
     manualBombs = true;
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
         tdsHolder[i].style.borderColor = "yellow";
-        tdsHolder[i].style.cursor = 'pointer' ; 
+        tdsHolder[i].style.cursor = 'pointer';
         tdsHolder[i].innerHTML = '💣';
     }
 }
@@ -160,9 +160,9 @@ function mouseEvent(elBtn, event, i, j) {
         bombPlaced = true;
         gBoard[i][j].isMine = true;
         renderBoard();
-        document.querySelector(`[data-i="${i}"][data-j="${j}"]`).innerHTML = '💣' ;
+        document.querySelector(`[data-i="${i}"][data-j="${j}"]`).innerHTML = '💣';
         document.querySelector(`[data-i="${i}"][data-j="${j}"]`).style.borderColor = "red";
-        setTimeout(function(){ renderBoard(); }, 1000);
+        setTimeout(function () { renderBoard(); }, 1000);
         manualBombs = false;
         return;
     }
@@ -183,8 +183,8 @@ function mouseEvent(elBtn, event, i, j) {
         var currI = parseInt(i);
         var currJ = parseInt(j);
         //=================================
-     
-        if (gBoard[currI][currJ].minesAroundCount === 0 ) {
+
+        if (gBoard[currI][currJ].minesAroundCount === 0) {
             expandShown(currI, currJ);
         }
         if (gBoard[currI][currJ].isMarked) return;
@@ -249,6 +249,9 @@ function checkWin() {
     }
 }
 function bestScore() {
+    if(!localStorage.getItem('bestScore')){
+    localStorage.setItem('bestScore', Infinity);
+    }
     if (gCurrTimer < localStorage.getItem('bestScore')) {
         score = gCurrTimer;
         localStorage.setItem('bestScore', score);
@@ -300,24 +303,18 @@ function expandShown(currI, currJ) {
         if (i < 0 || i >= gLevel.SIZE) continue;
         for (var j = currJ - 1; j <= currJ + 1; j++) {
             if (j < 0 || j >= gLevel.SIZE) continue;
-           gBoard[i][j].isShown = true ;
-        //     if(gBoard[i][j].minesAroundCount && !gBoard[i][j].isShown){
-        //         gBoard[i][j].isShown = true;
-        //     }
-        //     if(gBoard[i][j].minesAroundCount == 0 && !gBoard[i][j].isShown){
-        //         gBoard[i][j].isShown = true ;
-        //         expandShown(i,j);
-        //     }
+            gBoard[i][j].isShown = true;
         }
-        renderBoard();
     }
+    renderBoard();
 }
+
 function hintActive(btn) {
     isHint = true;
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
         tdsHolder[i].style.borderColor = "yellow";
-        tdsHolder[i].style.cursor = 'pointer' ; 
+        tdsHolder[i].style.cursor = 'pointer';
         tdsHolder[i].innerHTML = '💡';
     }
     btn.style.display = 'none';
@@ -350,6 +347,11 @@ function startTimer() {
         elTimer.innerText = `Your Time: ${gCurrTimer}s`;
     }, 55);
 }
+
+function howToToggle(elBtn) {
+    document.querySelector('.howToPlay').style.display = 'none';
+}
+
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

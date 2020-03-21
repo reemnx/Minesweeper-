@@ -11,6 +11,7 @@
 
 <body onload="initGame()" oncontextmenu="return false;">
     <div class="howToPlay">
+        <button class="howtobuttons" id="toggle" onclick="howToToggle(this)">Close</button>
         <h3 class="howtoheader">How to play:</h3>
         <p>To win this game, you have to expose ALL the none Mines Cells AND mark with a flag (Right Click) all the mines Cells.</p>
         <button class="howtobuttons">😀</button>
@@ -21,7 +22,6 @@
         <p>Safe Click Button: after Click, a random Non mine cell will be marked for a second.</p>
         <button class="howtobuttons">Set Bomb</button>
         <p>Set Manually Bomb Button: after Click, chose any cell you want on the board to apply a bomb on it.</p>
-        
     </div>
     <div class="gameContainer">
         <div class="header">
