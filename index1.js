@@ -45,7 +45,29 @@ function varsReset() {
     document.querySelector('.hintBtn3').style.display = 'block';
     document.querySelector('.smiley').innerHTML = '😀';
     document.querySelector('.winModalWraper').style.display = 'none';
-    document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestScore');
+    // debugger
+    if(gLevel.SIZE === 4){
+        if(localStorage.getItem('bestEasyScore') == null){
+            document.querySelector('.bestShow').innerHTML = 'No best score yet';
+            return ;
+        }
+        document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestEasyScore') + ' In Easy Mode' ;
+    }
+    if(gLevel.SIZE === 8){
+        if(localStorage.getItem('bestMedScore') == null){
+            document.querySelector('.bestShow').innerHTML = 'No best score yet';
+            return ;
+        }
+        document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestMedScore') + ' In Medium Mode';
+        
+    }
+    if(gLevel.SIZE === 12){
+        if(localStorage.getItem('bestHighScore') == null){
+            document.querySelector('.bestShow').innerHTML = 'No best score yet';
+            return ;
+        }
+        document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestHighScore') + ' In Hard Mode';
+    }
 }
 function initGame() {
     buildBoard();
@@ -136,6 +158,7 @@ function manuallBombs(elBtn) {
     if (gCellClicksCnt) {
         return;
     }
+    document.querySelector('.bombsModal').style.display = 'block';
     manualBombs = true;
     var tdsHolder = document.querySelectorAll('td');
     for (var i = 0; i < tdsHolder.length; i++) {
@@ -144,6 +167,11 @@ function manuallBombs(elBtn) {
         tdsHolder[i].innerHTML = '💣';
     }
 }
+
+function bombsModalBtn(elBtn){
+    document.querySelector('.bombsModal').style.display = 'none';
+}
+
 function mouseEvent(elBtn, event, i, j) {
     var currI = parseInt(i);
     var currj = parseInt(j);
@@ -248,16 +276,50 @@ function checkWin() {
         document.querySelector('.winModalWraper').style.display = 'block';
     }
 }
+// function bestScore() {
+//     if(!localStorage.getItem('bestScore')){
+//     localStorage.setItem('bestScore', Infinity);
+//     }
+//     if (gCurrTimer < localStorage.getItem('bestScore')) {
+//         score = gCurrTimer;
+//         localStorage.setItem('bestScore', score);
+//     }
+//     document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestScore');
+// }
 function bestScore() {
-    if(!localStorage.getItem('bestScore')){
-    localStorage.setItem('bestScore', Infinity);
+    debugger
+    if (gLevel.SIZE == 4) {
+        if (!localStorage.getItem('bestEasyScore')) {
+            localStorage.setItem('bestEasyScore', Infinity);
+        }
+        if (gCurrTimer < localStorage.getItem('bestEasyScore')) {
+            score = gCurrTimer ;
+            localStorage.setItem('bestEasyScore', score);
+        }
+        document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestEasyScore') + ' In Easy Mode';
     }
-    if (gCurrTimer < localStorage.getItem('bestScore')) {
-        score = gCurrTimer;
-        localStorage.setItem('bestScore', score);
+    if (gLevel.SIZE == 8) {
+        if (!localStorage.getItem('bestMedScore')) {
+            localStorage.setItem('bestMedScore', Infinity);
+        }
+        if (gCurrTimer < localStorage.getItem('bestMedScore')) {
+            score = gCurrTimer ;
+            localStorage.setItem('bestMedScore', score);
+        }
+        document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestMedScore') + ' In Medium Mode' ;
     }
-    document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestScore');
+    if (gLevel.SIZE == 12) {
+        if (!localStorage.getItem('bestHighScore')) {
+            localStorage.setItem('bestHighScore', Infinity);
+        }
+        if (gCurrTimer < localStorage.getItem('bestHighScore')) {
+            score = gCurrTimer ;
+            localStorage.setItem('bestHighScore', score);
+        }
+        document.querySelector('.bestShow').innerHTML = localStorage.getItem('bestHighScore')  + ' In Hard Mode' ;
+    }
 }
+
 function gameOver() {
     clearInterval(gTimer);
     for (var i = 0; i < gLevel.SIZE; i++) {
